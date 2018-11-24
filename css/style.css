@@ -1,0 +1,59 @@
+body{
+  margin:0px;
+  background:#f1f1f1;
+}
+.navbar-fixed{
+  height:auto !important;
+}
+nav{
+  height:auto;
+}
+.mb-0{
+  margin-bottom:0px;
+}
+
+.pt-10{
+  padding-top:10em;
+}
+
+.tabs .indicator {
+    background-color: #fff;
+}
+::-webkit-scrollbar-button {
+	display: none;
+	height: 13px;
+	border-radius: 0px;
+	background-color: #AAA;
+}
+
+ ::-webkit-scrollbar-button:hover {
+  display: none;
+	background-color: #AAA;
+}
+
+ ::-webkit-scrollbar-thumb {
+  display: none;
+	background-color: #8b8b8b;
+	border-radius: 30px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+  display: none;
+	background-color: #585858;
+	border-radius: 30px;
+}
+
+ ::-webkit-scrollbar-track {
+  display: none;
+	background-color: #efefef;
+}
+
+ ::-webkit-scrollbar-track:hover {
+  display: none;
+	background-color: #CCC;
+}
+
+ ::-webkit-scrollbar {
+  display: none;
+	width: 5px;
+}

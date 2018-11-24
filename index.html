@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" >
+	<head>
+		<meta charset="UTF-8">
+		<title>PyBlock -  Blockchain in Python</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css'>
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css'>
+		<link rel='stylesheet' href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="navbar-fixed ">
+			<nav>
+				<div class="nav-wrapper blue ">
+					<ul id="nav-mobile" class="right">
+						<a class="waves-effect waves-light btn green" id="serverstat">Connected</a>
+					</ul>
+					<div class="row mb-0">
+						<div class="col">
+							<h5 style="padding:10px;">PyBlock </h5>
+						</div>
+					</div>
+					<div class="row mb-0">
+						<div class='col s12  m6 offset-m2'>
+							<ul class="tabs blue swipeable ">
+								<li class="tab col s1 "><a href="#t_view" id="tabs_view" class='white-text'>View</a></li>
+								<li class="tab col s1"><a id="tabs_mine" class="active white-text" href="#t_mine">Mine</a></li>
+								<li class="tab col s1"><a id="tabs_add" href="#t_add" class='white-text'>Add</a></li>
+								<li class="tab col s1"><a id="tabs_node" href="#t_n" class='white-text'>Nodes</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="container pt-10">
+			<div class="row">
+				<div id="t_view" class="col s12">
+					<div class="card hoverable">
+						<div class="card-content">
+							<span class="card-title activator grey-text text-darken-4" style="margin-top: 1px;">Block #1<i class="material-icons right">search</i></span>
+							<p>Transactions: </p>
+							<p>PoW: </p>
+							<p>Previous Hash: </p>
+							<p>Time Stamp:</p>
+						</div>
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">Transaction Details<i class="material-icons right">close</i></span>
+							<ul class="collection">
+								<li class="collection-item">Alvin</li>
+								<li class="collection-item">Alvin</li>
+								<li class="collection-item">Alvin</li>
+								<li class="collection-item">Alvin</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div id="t_mine" class="col s12">
+					<div class="card hoverable">
+						<div class="card-content">
+							<center>
+								<span class="card-title grey-text text-darken-4" style="margin-top: 1px;">Mine Block</span>
+								<br />
+								<button class="btn waves-effect waves-light blue" type="submit" name="action" id="mine">Mine
+								<i class="material-icons right">settings</i>
+								</button>
+							</center>
+						</div>
+					</div>
+				</div>
+				<div id="t_add" class="col s12">
+					<div class="card hoverable">
+						<div class="card-content">
+							<div class="row">
+								<form class="col s12">
+									<span class="card-title grey-text text-darken-4" style="margin-top: 1px;">Add Transaction</span>
+									<div class="row">
+										<div class="input-field col s12">
+											<input id="addtrans_add" type="text" class="validate">
+											<label for="addtrans_add" class="">Address</label>
+										</div>
+										<div class="input-field col s6">
+											<input id="addtrans_amt" type="text" class="validate">
+											<label for="addtrans_amt" class="">Amount</label>
+										</div>
+										<div class="input-field col s6">
+											<select class = "browser-default" id="addtrans_cur">
+												<option value = "" disabled selected>Currency</option>
+												<option value = "ETH">ETH</option>
+												<option value = "DAI">DAI</option>
+											</select>
+										</div>
+										<div class="input-field col s12">
+											<button class="btn waves-effect waves-light blue" name="action" id="tSub">
+											<i class="material-icons right">add</i>
+											Add
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="t_n" class="col s12">
+					<div class="card hoverable">
+						<div class="card-content">
+							<center>
+								<span class="card-title grey-text text-darken-4" style="margin-top: 1px;">Connected Nodes</span>
+								<ul class="collection" id="nodeList">
+									<li class="collection-item">
+										<div>http://127.0.0.1:5000/<a href="#!" class="secondary-content"><i class="material-icons red-text">do_not_disturb</i></a></div>
+									</li>
+								</ul>
+								<div class="row">
+									<div class="input-field" style=" padding-left: 10px; padding-right: 10px; max-width:400px;">
+										<input placeholder="IP address" id="ipadd" type="text" class="">
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s12">
+										<div class="row">
+											<div class="input-field col s4">
+												<button class="btn waves-effect waves-light blue" name="action" style="padding-inline-start: 10px;padding-inline-end: 10px;" id="btnAddNode">
+												<i class="material-icons left">add</i>
+												Add Node
+												</button>
+											</div>
+											<div class="input-field col s4">
+												<button class="btn waves-effect waves-light red" name="action" style="padding-inline-start: 10px;padding-inline-end: 10px;" id="btnDisconnectNodes">
+												<i class="material-icons left">delete_forever</i>
+												Disconnect All
+												</button>
+											</div>
+											<div class="input-field col s4">
+												<button class="btn waves-effect waves-light green" name="action" style="padding-inline-start: 10px;padding-inline-end: 10px;" id="btnMergeNodes">
+												<i class="material-icons left">merge_type</i>
+												Merge Offchain Nodes
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js'></script>
+		<script  src="js/index.js"></script>
+	</body>
+</html>
